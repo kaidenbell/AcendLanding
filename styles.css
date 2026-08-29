@@ -589,6 +589,7 @@ body.nav-open {
   margin-top: calc(var(--header) * -1);
   padding: calc(var(--header) + 48px) 0 48px;
   color: var(--bg);
+  background-color: #0c0a08;
   overflow: hidden;
 }
 
@@ -611,6 +612,14 @@ body.nav-open {
 .hero .wrap {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .hero::before {
+    background-size: 100% 100%, contain;
+    background-position: center, 50% 42%;
+    background-repeat: no-repeat;
+  }
 }
 
 @media (min-width: 768px) {
@@ -654,12 +663,6 @@ body.nav-open {
   text-shadow: 0 0 28px rgb(12 10 8 / 0.4);
 }
 
-@media (max-width: 479px) {
-  .hero .display {
-    font-size: clamp(1.85rem, 8.8vw, 2.75rem);
-  }
-}
-
 .hero__lede {
   max-width: 38ch;
   margin: 28px auto 0;
@@ -667,6 +670,24 @@ body.nav-open {
   line-height: 1.6;
   color: var(--bg);
   text-shadow: 0 0 24px rgb(12 10 8 / 0.38);
+}
+
+@media (max-width: 767px) {
+  .hero .display {
+    white-space: normal;
+    font-size: clamp(2.85rem, 13.5vw, 3.85rem);
+  }
+
+  .hero .display em {
+    display: block;
+  }
+
+  .hero__lede {
+    max-width: 26ch;
+    margin-top: 16px;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
 }
 
 @media (min-width: 768px) {
