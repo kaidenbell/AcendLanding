@@ -616,8 +616,8 @@ body.nav-open {
 
 @media (max-width: 767px) {
   .hero::before {
-    background-size: 100% 100%, contain;
-    background-position: center, 50% 42%;
+    background-size: 100% 100%, auto 100%;
+    background-position: center, 50% 50%;
     background-repeat: no-repeat;
   }
 }
@@ -674,12 +674,8 @@ body.nav-open {
 
 @media (max-width: 767px) {
   .hero .display {
-    white-space: normal;
-    font-size: clamp(2.85rem, 13.5vw, 3.85rem);
-  }
-
-  .hero .display em {
-    display: block;
+    white-space: nowrap;
+    font-size: clamp(2.05rem, 9.2vw, 2.5rem);
   }
 
   .hero__lede {
