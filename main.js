@@ -15,6 +15,7 @@ function setMenu(open) {
   toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   mobileNav.classList.toggle("is-open", open);
   document.body.classList.toggle("nav-open", open);
+  document.documentElement.classList.toggle("nav-open", open);
 }
 
 syncHeader();
