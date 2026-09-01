@@ -687,10 +687,11 @@ html.nav-open {
   }
 
   .hero__lede {
-    max-width: 26ch;
+    max-width: none;
     margin-top: 16px;
-    font-size: 0.9375rem;
-    line-height: 1.45;
+    font-size: clamp(0.7rem, 3.55vw, 0.9375rem);
+    line-height: 1.3;
+    white-space: nowrap;
   }
 }
 
@@ -707,6 +708,19 @@ html.nav-open {
   justify-content: center;
   gap: 12px;
   margin-top: 36px;
+}
+
+@media (max-width: 767px) {
+  .hero__cta {
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .hero__cta .btn--lg {
+    height: 40px;
+    padding: 0 18px;
+    font-size: 0.75rem;
+  }
 }
 
 .hero .btn--ink {
@@ -792,6 +806,16 @@ html.nav-open {
   font-size: clamp(0.5rem, 0.42rem + 0.35vw, 0.8125rem);
   line-height: 1.25;
   color: var(--bg);
+}
+
+@media (max-width: 767px) {
+  .stats dt {
+    font-size: clamp(1.05rem, 0.65rem + 2.4vw, 1.4rem);
+  }
+
+  .stats dd {
+    font-size: clamp(0.5625rem, 0.48rem + 0.45vw, 0.6875rem);
+  }
 }
 
 @media (min-width: 768px) {
@@ -970,71 +994,6 @@ html.nav-open {
   transform: translateX(3px);
 }
 
-/* —— Settlement —— */
-
-.settle {
-  padding: var(--module) 0;
-}
-
-.settle .lede {
-  margin-top: 20px;
-  max-width: 42ch;
-}
-
-.settle__bar {
-  display: flex;
-  height: 12px;
-  margin-top: 56px;
-  overflow: hidden;
-  border-radius: var(--radius-pill);
-  background: var(--line);
-}
-
-.settle__bar span {
-  width: 80%;
-  background: var(--ink);
-}
-
-.settle__split {
-  display: grid;
-  gap: 40px;
-  margin-top: 32px;
-}
-
-@media (min-width: 640px) {
-  .settle__split {
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    margin-top: 40px;
-  }
-}
-
-.big {
-  font-family: var(--font-display);
-  font-size: clamp(3.25rem, 2rem + 5vw, 4.5rem);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  font-optical-sizing: auto;
-}
-
-.big--mute {
-  color: rgb(50 48 47 / 0.32);
-}
-
-.settle__split h3 {
-  margin-top: 16px;
-  font-size: 0.9375rem;
-  font-weight: 500;
-}
-
-.settle__split p {
-  margin-top: 8px;
-  max-width: 32ch;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
 /* —— Quote —— */
 
 .quote {
@@ -1047,10 +1006,10 @@ html.nav-open {
 }
 
 .quote blockquote {
-  margin: 0 auto;
-  max-width: 18ch;
+  margin: 0;
+  max-width: none;
   font-family: var(--font-display);
-  font-size: clamp(2.35rem, 1.1rem + 4.6vw, 4.75rem);
+  font-size: clamp(2.75rem, 1.5rem + 6.5vw, 6rem);
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.035em;
