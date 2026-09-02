@@ -360,6 +360,17 @@ p {
   outline-color: var(--bg);
 }
 
+.header.is-over-dark {
+  background: #09090a;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.header.is-over-dark.is-scrolled {
+  background: #09090a;
+}
+
 body.nav-open .header {
   position: fixed;
   top: 0;
@@ -953,13 +964,6 @@ html.nav-open {
   gap: 56px;
 }
 
-@media (min-width: 1024px) {
-  .ambition__grid {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 112px;
-  }
-}
-
 .ambition__intro .lede {
   margin-top: 24px;
   max-width: 36ch;
@@ -978,12 +982,14 @@ html.nav-open {
   margin: 20px 0 0;
   overflow: hidden;
   border-radius: 14px;
+  aspect-ratio: 4 / 3;
 }
 
 .ambition__shot img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .ambition article .ambition__shot + p {
@@ -1015,6 +1021,46 @@ html.nav-open {
   transform: translateX(3px);
 }
 
+@media (min-width: 1024px) {
+  .ambition__grid {
+    gap: 64px;
+  }
+
+  .ambition__intro {
+    text-align: center;
+  }
+
+  .ambition__intro .lede {
+    margin-inline: auto;
+  }
+
+  .ambition__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+  }
+
+  .ambition article {
+    position: relative;
+    padding: 44px 0 0;
+    border-bottom: 0;
+  }
+
+  .ambition article:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    left: -24px;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .ambition article p {
+    max-width: none;
+  }
+}
+
 /* —— Quote —— */
 
 .quote {
@@ -1038,130 +1084,27 @@ html.nav-open {
   font-optical-sizing: auto;
 }
 
+.quote__line {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  .quote blockquote {
+    font-size: min(2.25rem, calc((100vw - 2 * var(--page-pad)) / 11.75));
+    line-height: 1.18;
+  }
+
+  .quote__line {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
 .quote figcaption {
   margin-top: 28px;
   font-size: 0.75rem;
   line-height: 1.4;
   color: var(--ink);
-}
-
-/* —— Compare —— */
-
-.compare {
-  padding-bottom: 32px;
-}
-
-.compare .lede {
-  margin-top: 20px;
-  max-width: 42ch;
-}
-
-.table-wrap {
-  display: none;
-  margin-top: 48px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-panel);
-}
-
-@media (min-width: 768px) {
-  .table-wrap {
-    display: block;
-  }
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.875rem;
-}
-
-th,
-td {
-  padding: 24px 28px;
-  font-weight: 400;
-  vertical-align: top;
-  border-bottom: 1px solid var(--line);
-}
-
-thead th {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  font-weight: 500;
-}
-
-thead th:nth-child(2),
-tbody td:first-of-type {
-  background: var(--surface);
-}
-
-tbody tr:last-child th,
-tbody tr:last-child td {
-  border-bottom: 0;
-}
-
-.feature-name {
-  display: block;
-  font-weight: 500;
-}
-
-.feature-detail {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.8125rem;
-  color: var(--muted);
-}
-
-.yes {
-  font-weight: 500;
-}
-
-.no {
-  color: var(--muted);
-}
-
-.compare-cards {
-  display: grid;
-  gap: 12px;
-  margin-top: 40px;
-}
-
-@media (min-width: 768px) {
-  .compare-cards {
-    display: none;
-  }
-}
-
-.compare-cards article {
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-}
-
-.compare-cards h3 {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.compare-cards .feature-detail {
-  margin-top: 4px;
-}
-
-.compare-cards dl {
-  margin-top: 16px;
-}
-
-.compare-cards div {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 10px;
-  font-size: 0.8125rem;
-}
-
-.compare-cards dt {
-  color: var(--muted);
 }
 
 /* —— Advantage —— */

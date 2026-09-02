@@ -2,11 +2,19 @@ const header = document.querySelector(".header");
 const toggle = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector(".mobile-nav");
 const hero = document.querySelector(".hero");
+const darkBands = document.querySelectorAll(".cta, .footer");
+
+function isOverlappingHeader(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < header.offsetHeight && rect.bottom > 0;
+}
 
 function syncHeader() {
-  const pastHero = hero.getBoundingClientRect().bottom <= header.offsetHeight;
-  header.classList.toggle("is-over-hero", !pastHero);
-  header.classList.toggle("is-scrolled", pastHero);
+  const overHero = isOverlappingHeader(hero);
+  const overDark = [...darkBands].some(isOverlappingHeader);
+  header.classList.toggle("is-over-hero", overHero || overDark);
+  header.classList.toggle("is-over-dark", overDark);
+  header.classList.toggle("is-scrolled", !overHero && !overDark);
 }
 
 function setMenu(open) {

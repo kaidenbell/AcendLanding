@@ -39,12 +39,10 @@
                 <path d="M32 9A17 17 0 0 0 17 0A17 17 0 0 0 0 17A17 17 0 0 0 17 34A17 17 0 0 0 32 25L25.26 25A11.5 11.5 0 0 1 17 28.5A11.5 11.5 0 0 1 5.5 17A11.5 11.5 0 0 1 17 5.5A11.5 11.5 0 0 1 25.26 9L32 9Z" />
               </g>
               <g transform="translate(70 14)">
-                <clipPath id="e-clip-h">
-                  <circle cx="17" cy="17" r="17" />
-                </clipPath>
-                <g clip-path="url(#e-clip-h)">
-                  <path d="M34 17a17 17 0 1 1-34 0 17 17 0 1 1 34 0zM28.5 17a11.5 11.5 0 1 0-23 0 11.5 11.5 0 1 0 23 0zM0 14.25h34v5.5H0zM33.73 20L28.1 20A11.5 11.5 0 0 1 25.26 25L32 25A17 17 0 0 0 33.73 20z" />
-                </g>
+                <path
+                  fill-rule="evenodd"
+                  d="M32 25A17 17 0 1 1 33.776 14.25L33.776 19.75H5.833A11.5 11.5 0 0 0 17 28.5A11.5 11.5 0 0 0 25.26 25L32 25ZM5.833 14.25A11.5 11.5 0 0 1 17 5.5A11.5 11.5 0 0 1 28.167 14.25Z"
+                />
               </g>
               <g transform="translate(105 14)">
                 <path d="M0 34V16A16 16 0 0 1 32 16V34H26V16A10 10 0 0 0 6 16V34H0Z" />
@@ -59,7 +57,6 @@
         <nav class="nav" aria-label="Primary">
           <a href="#platform">Platform</a>
           <a href="#products">Trade</a>
-          <a href="#compare">Why Acend</a>
           <a href="#advantage">Advantage</a>
         </nav>
 
@@ -89,7 +86,6 @@
       <nav class="wrap" aria-label="Mobile">
         <a href="#platform">Platform</a>
         <a href="#products">Trade</a>
-        <a href="#compare">Why Acend</a>
         <a href="#advantage">Advantage</a>
         <div class="mobile-nav__cta">
           <a class="btn btn--ghost" href="https://acend-production.up.railway.app">Log in</a>
@@ -220,8 +216,8 @@
                 <img
                   src="./images/invest-intention.png"
                   alt="Acend watchlist and chart with majors, equities, and live activity"
-                  width="1600"
-                  height="1000"
+                  width="1024"
+                  height="768"
                 />
               </figure>
               <p>
@@ -230,9 +226,17 @@
               <a href="#products">See what you can trade <span class="arrow" aria-hidden="true">→</span></a>
             </article>
             <article>
-              <h3 class="subhead">See what matters</h3>
+              <h3 class="subhead">Trade with better tools</h3>
+              <figure class="ambition__shot">
+                <img
+                  src="./images/see-what-matters.png"
+                  alt="Acend order ticket with market, limit, and stock tracking"
+                  width="1024"
+                  height="768"
+                />
+              </figure>
               <p>
-                Charts, marks, and context that help you act. Built to stay readable, even when markets are not.
+                Market, limit, and stock tracking in one ticket. Serious tools, presented clearly.
               </p>
               <a href="#platform">Explore the platform <span class="arrow" aria-hidden="true">→</span></a>
             </article>
@@ -242,8 +246,8 @@
                 <img
                   src="./images/easy-layout.png"
                   alt="Acend trading desk with a draggable watchlist and order ticket over the chart"
-                  width="1600"
-                  height="1000"
+                  width="1024"
+                  height="768"
                 />
               </figure>
               <p>
@@ -259,146 +263,13 @@
         <div class="wrap wrap--wide">
           <figure>
             <blockquote>
-              “Trade with more information. Keep the experience simple.”
+              <span class="quote__line">“Trade with more information.</span>
+              <span class="quote__line">Keep the experience simple.”</span>
             </blockquote>
           </figure>
         </div>
       </section>
 
-      <section class="compare" id="compare">
-        <div class="wrap">
-          <h2 class="heading">What you get with Acend</h2>
-          <p class="lede">
-            Professional-grade data and tools, with an experience that stays clean and easy.
-          </p>
-
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Acend</th>
-                  <th style="color: var(--muted)">Simple AMMs</th>
-                  <th style="color: var(--muted)">Legacy brokers</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>
-                    <span class="feature-name">Live market data</span>
-                    <span class="feature-detail">Real-time prices and context, on the screen where you trade.</span>
-                  </th>
-                  <td class="yes">Yes</td>
-                  <td class="no">Limited</td>
-                  <td class="no">Delayed</td>
-                </tr>
-                <tr>
-                  <th>
-                    <span class="feature-name">Simple by design</span>
-                    <span class="feature-detail">Professional tools, presented clearly.</span>
-                  </th>
-                  <td class="yes">Yes</td>
-                  <td class="no">Complex</td>
-                  <td class="no">Clunky</td>
-                </tr>
-                <tr>
-                  <th>
-                    <span class="feature-name">Instant fills</span>
-                    <span class="feature-detail">Your order completes when you place it.</span>
-                  </th>
-                  <td class="yes">Yes</td>
-                  <td class="yes">Yes</td>
-                  <td class="no">T+1</td>
-                </tr>
-                <tr>
-                  <th>
-                    <span class="feature-name">Stocks and tokens</span>
-                    <span class="feature-detail">Equities, SOL, USDC, and more in one account.</span>
-                  </th>
-                  <td class="yes">Yes</td>
-                  <td class="no">Tokens only</td>
-                  <td class="no">Stocks only</td>
-                </tr>
-                <tr>
-                  <th>
-                    <span class="feature-name">Built for Solana</span>
-                    <span class="feature-detail">Fast confirmation and low fees, native to the chain.</span>
-                  </th>
-                  <td class="yes">Yes</td>
-                  <td class="no">Maybe</td>
-                  <td class="no">No</td>
-                </tr>
-                <tr>
-                  <th>
-                    <span class="feature-name">Self-custody</span>
-                    <span class="feature-detail">You sign every trade. You keep your keys.</span>
-                  </th>
-                  <td class="yes">Yes</td>
-                  <td class="yes">Yes</td>
-                  <td class="no">Custodial</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="compare-cards">
-            <article>
-              <h3>Live market data</h3>
-              <p class="feature-detail">Real-time prices and context, on the screen where you trade.</p>
-              <dl>
-                <div><dt>Acend</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Simple AMMs</dt><dd class="no">Limited</dd></div>
-                <div><dt>Legacy brokers</dt><dd class="no">Delayed</dd></div>
-              </dl>
-            </article>
-            <article>
-              <h3>Simple by design</h3>
-              <p class="feature-detail">Professional tools, presented clearly.</p>
-              <dl>
-                <div><dt>Acend</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Simple AMMs</dt><dd class="no">Complex</dd></div>
-                <div><dt>Legacy brokers</dt><dd class="no">Clunky</dd></div>
-              </dl>
-            </article>
-            <article>
-              <h3>Instant fills</h3>
-              <p class="feature-detail">Your order completes when you place it.</p>
-              <dl>
-                <div><dt>Acend</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Simple AMMs</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Legacy brokers</dt><dd class="no">T+1</dd></div>
-              </dl>
-            </article>
-            <article>
-              <h3>Stocks and tokens</h3>
-              <p class="feature-detail">Equities, SOL, USDC, and more in one account.</p>
-              <dl>
-                <div><dt>Acend</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Simple AMMs</dt><dd class="no">Tokens only</dd></div>
-                <div><dt>Legacy brokers</dt><dd class="no">Stocks only</dd></div>
-              </dl>
-            </article>
-            <article>
-              <h3>Built for Solana</h3>
-              <p class="feature-detail">Fast confirmation and low fees, native to the chain.</p>
-              <dl>
-                <div><dt>Acend</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Simple AMMs</dt><dd class="no">Maybe</dd></div>
-                <div><dt>Legacy brokers</dt><dd class="no">No</dd></div>
-              </dl>
-            </article>
-            <article>
-              <h3>Self-custody</h3>
-              <p class="feature-detail">You sign every trade. You keep your keys.</p>
-              <dl>
-                <div><dt>Acend</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Simple AMMs</dt><dd class="yes">Yes</dd></div>
-                <div><dt>Legacy brokers</dt><dd class="no">Custodial</dd></div>
-              </dl>
-            </article>
-          </div>
-        </div>
-      </section>
 
       <section class="advantage" id="advantage">
         <div class="wrap">
@@ -452,7 +323,6 @@
           <nav aria-label="Footer">
             <a href="#platform">Platform</a>
             <a href="#products">Trade</a>
-            <a href="#compare">Why Acend</a>
             <a href="#advantage">Advantage</a>
             <a href="https://acend-production.up.railway.app">Log in</a>
           </nav>
@@ -473,12 +343,10 @@
                 <path d="M32 9A17 17 0 0 0 17 0A17 17 0 0 0 0 17A17 17 0 0 0 17 34A17 17 0 0 0 32 25L25.26 25A11.5 11.5 0 0 1 17 28.5A11.5 11.5 0 0 1 5.5 17A11.5 11.5 0 0 1 17 5.5A11.5 11.5 0 0 1 25.26 9L32 9Z" />
               </g>
               <g transform="translate(70 14)">
-                <clipPath id="e-clip-f">
-                  <circle cx="17" cy="17" r="17" />
-                </clipPath>
-                <g clip-path="url(#e-clip-f)">
-                  <path d="M34 17a17 17 0 1 1-34 0 17 17 0 1 1 34 0zM28.5 17a11.5 11.5 0 1 0-23 0 11.5 11.5 0 1 0 23 0zM0 14.25h34v5.5H0zM33.73 20L28.1 20A11.5 11.5 0 0 1 25.26 25L32 25A17 17 0 0 0 33.73 20z" />
-                </g>
+                <path
+                  fill-rule="evenodd"
+                  d="M32 25A17 17 0 1 1 33.776 14.25L33.776 19.75H5.833A11.5 11.5 0 0 0 17 28.5A11.5 11.5 0 0 0 25.26 25L32 25ZM5.833 14.25A11.5 11.5 0 0 1 17 5.5A11.5 11.5 0 0 1 28.167 14.25Z"
+                />
               </g>
               <g transform="translate(105 14)">
                 <path d="M0 34V16A16 16 0 0 1 32 16V34H26V16A10 10 0 0 0 6 16V34H0Z" />
