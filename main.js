@@ -4,17 +4,27 @@ const mobileNav = document.querySelector(".mobile-nav");
 const hero = document.querySelector(".hero");
 const darkBands = document.querySelectorAll(".cta, .footer");
 
-function isOverlappingHeader(el) {
+function isOverlappingHeader(el, lead = 0) {
   const rect = el.getBoundingClientRect();
-  return rect.top < header.offsetHeight && rect.bottom > 0;
+  const headerBottom = header.offsetHeight;
+  return rect.top < headerBottom && rect.bottom > headerBottom + lead;
 }
 
 function syncHeader() {
-  const overHero = isOverlappingHeader(hero);
-  const overDark = [...darkBands].some(isOverlappingHeader);
+  const overHero = isOverlappingHeader(hero, -12);
+  const overDark = [...darkBands].some((el) => isOverlappingHeader(el));
   header.classList.toggle("is-over-hero", overHero || overDark);
   header.classList.toggle("is-over-dark", overDark);
   header.classList.toggle("is-scrolled", !overHero && !overDark);
+}
+
+let headerSyncRaf = 0;
+function requestHeaderSync() {
+  if (headerSyncRaf) return;
+  headerSyncRaf = requestAnimationFrame(() => {
+    headerSyncRaf = 0;
+    syncHeader();
+  });
 }
 
 function setMenu(open) {
@@ -27,8 +37,8 @@ function setMenu(open) {
 }
 
 syncHeader();
-window.addEventListener("scroll", syncHeader, { passive: true });
-window.addEventListener("resize", syncHeader);
+window.addEventListener("scroll", requestHeaderSync, { passive: true });
+window.addEventListener("resize", requestHeaderSync);
 
 toggle.addEventListener("click", () => {
   setMenu(!toggle.classList.contains("is-open"));

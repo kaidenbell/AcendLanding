@@ -311,7 +311,7 @@ p {
   border-bottom: 1px solid transparent;
   background: var(--bg);
   color: var(--ink);
-  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
 .header.is-scrolled {
@@ -1132,7 +1132,7 @@ html.nav-open {
 /* —— Advantage —— */
 
 .advantage {
-  padding: var(--module) 0;
+  padding: var(--module) 0 calc(var(--module) * 1.5);
 }
 
 .advantage__intro {
@@ -1257,6 +1257,7 @@ html.nav-open {
   font-size: clamp(2.5rem, 1.4rem + 4.5vw, 4.25rem);
   line-height: 1.06;
   letter-spacing: -0.035em;
+  white-space: nowrap;
 }
 
 .cta .lede {
@@ -1301,10 +1302,10 @@ html.nav-open {
 
 .footer__tag {
   margin: 0;
-  max-width: 26ch;
   font-size: 0.875rem;
   line-height: 1.6;
   color: rgb(250 248 245 / 0.5);
+  white-space: nowrap;
 }
 
 .footer nav {
