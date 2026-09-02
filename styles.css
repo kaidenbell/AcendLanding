@@ -974,6 +974,22 @@ html.nav-open {
   border-bottom: 1px solid var(--line);
 }
 
+.ambition__shot {
+  margin: 20px 0 0;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.ambition__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ambition article .ambition__shot + p {
+  margin-top: 20px;
+}
+
 .ambition article p {
   margin-top: 12px;
   max-width: 46ch;
