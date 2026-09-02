@@ -39,5 +39,32 @@ mobileNav.querySelectorAll("a").forEach((link) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") setMenu(false);
+  if (event.key === "Escape") {
+    setMenu(false);
+    setBeta(false);
+  }
+});
+
+const betaGate = document.querySelector("#beta-gate");
+const appLinks = document.querySelectorAll('a[href*="acend-production.up.railway.app"]');
+
+function setBeta(open) {
+  betaGate.hidden = !open;
+  document.body.classList.toggle("beta-open", open);
+  if (open) {
+    setMenu(false);
+    const closeBtn = betaGate.querySelector(".btn[data-beta-close]");
+    closeBtn?.focus();
+  }
+}
+
+appLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setBeta(true);
+  });
+});
+
+betaGate.querySelectorAll("[data-beta-close]").forEach((el) => {
+  el.addEventListener("click", () => setBeta(false));
 });

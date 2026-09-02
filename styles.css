@@ -962,13 +962,24 @@ html.nav-open {
   padding: var(--module) 0 16px;
 }
 
+@media (max-width: 767px) {
+  .ambition {
+    padding-bottom: 56px;
+  }
+}
+
 .ambition__grid {
   display: grid;
   gap: 56px;
 }
 
+.ambition__intro {
+  text-align: center;
+}
+
 .ambition__intro .lede {
   margin-top: 24px;
+  margin-inline: auto;
   max-width: 36ch;
 }
 
@@ -1029,14 +1040,6 @@ html.nav-open {
     gap: 64px;
   }
 
-  .ambition__intro {
-    text-align: center;
-  }
-
-  .ambition__intro .lede {
-    margin-inline: auto;
-  }
-
   .ambition__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1092,6 +1095,10 @@ html.nav-open {
 }
 
 @media (max-width: 767px) {
+  .quote {
+    padding: 128px 0;
+  }
+
   .quote .wrap--wide {
     width: calc(100% - 24px);
   }
@@ -1128,49 +1135,110 @@ html.nav-open {
   padding: var(--module) 0;
 }
 
-.advantage .lede {
+.advantage__intro {
+  max-width: 38rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.advantage__intro .lede {
   margin-top: 20px;
+  margin-inline: auto;
   max-width: 42ch;
 }
 
-.advantage__grid {
+.advantage__scale {
   display: grid;
-  margin-top: 56px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 40px;
+}
+
+.advantage__scale article {
+  padding: 32px 16px 0 0;
   border-top: 1px solid var(--line);
 }
 
-.advantage article {
-  padding: 36px 0;
-  border-bottom: 1px solid var(--line);
+.advantage__scale article:last-child {
+  padding-right: 0;
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
 }
 
-.advantage article p.body {
+.advantage__stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.advantage__coins {
+  flex: none;
+  width: 2rem;
+  height: auto;
+  color: var(--ink);
+  overflow: visible;
+}
+
+.advantage__coins--lg {
+  width: 2.35rem;
+}
+
+.advantage__coin-body {
+  fill: var(--ink);
+}
+
+.advantage__coin-face {
+  fill: var(--surface);
+}
+
+.advantage__figure {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.1rem + 6vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  font-optical-sizing: auto;
+}
+
+.advantage .subhead {
   margin-top: 16px;
-  max-width: 34ch;
+}
+
+.advantage article .body {
+  margin-top: 12px;
+  max-width: 32ch;
   line-height: 1.65;
   color: var(--muted);
 }
 
-.advantage .subhead {
-  margin-top: 20px;
-}
-
 @media (min-width: 768px) {
-  .advantage__grid {
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 80px;
-    border-top: 0;
+  .advantage__scale {
+    margin-top: 72px;
   }
 
-  .advantage article {
-    padding: 44px 48px 0 0;
-    border-bottom: 0;
-    border-top: 1px solid var(--line);
+  .advantage__scale article {
+    padding: 48px 56px 0 0;
   }
 
-  .advantage article:not(:first-child) {
-    padding-left: 48px;
-    border-left: 1px solid var(--line);
+  .advantage__scale article:last-child {
+    padding-left: 56px;
+  }
+
+  .advantage__stat {
+    gap: 16px;
+  }
+
+  .advantage__coins {
+    width: 2.75rem;
+  }
+
+  .advantage__coins--lg {
+    width: 3.25rem;
+  }
+
+  .advantage .subhead {
+    margin-top: 28px;
   }
 }
 
@@ -1287,6 +1355,69 @@ html.nav-open {
   .footer__bottom p:last-child {
     flex-shrink: 0;
   }
+}
+
+/* —— Beta gate —— */
+
+.beta-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beta-gate[hidden] {
+  display: none;
+}
+
+.beta-gate__backdrop {
+  display: none;
+}
+
+.beta-gate__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 32px var(--page-pad);
+  background: var(--bg);
+  color: var(--ink);
+  text-align: center;
+}
+
+.beta-gate__panel .lede {
+  margin-top: 16px;
+  max-width: 28ch;
+}
+
+.beta-gate__panel .btn {
+  margin-top: 36px;
+}
+
+@media (min-width: 768px) {
+  .beta-gate__backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgb(9 9 10 / 0.48);
+  }
+
+  .beta-gate__panel {
+    position: relative;
+    width: min(28rem, calc(100% - 48px));
+    height: auto;
+    padding: 48px 40px 40px;
+    border-radius: var(--radius-panel);
+    box-shadow: 0 24px 80px rgb(12 10 8 / 0.18);
+  }
+}
+
+body.beta-open {
+  overflow: hidden;
 }
 
 /* —— Motion —— */

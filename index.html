@@ -115,7 +115,7 @@
           <dl class="stats fade d3">
             <div>
               <dt>$2B+</dt>
-              <dd>Institutional Liquidity</dd>
+              <dd>External liquidity</dd>
             </div>
             <div>
               <dt>Instant</dt>
@@ -273,30 +273,61 @@
 
       <section class="advantage" id="advantage">
         <div class="wrap">
-          <h2 class="heading">Trade with more behind you</h2>
-          <p class="lede">
-            Better data and better tools, in a layout that stays out of your way.
-          </p>
-          <div class="advantage__grid">
+          <div class="advantage__intro">
+            <h2 class="heading">Built for every size</h2>
+            <p class="lede">
+              Whether you are just getting started or trading in size, you get the same experience.
+            </p>
+          </div>
+          <div class="advantage__scale">
             <article>
-              <p class="eyebrow tabular">01</p>
-              <h3 class="subhead">Fine-tune your exposure</h3>
+              <div class="advantage__stat">
+                <p class="advantage__figure tabular">$1</p>
+                <svg class="advantage__coins" viewBox="0 0 40 32" aria-hidden="true">
+                  <g stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+                    <g transform="translate(24 11)">
+                      <path class="advantage__coin-body" d="M-10 0v6a10 4 0 0 0 20 0V0a10 4 0 0 1-20 0z" />
+                      <ellipse class="advantage__coin-face" cx="0" cy="0" rx="10" ry="4" />
+                    </g>
+                    <g transform="translate(15 18)">
+                      <path class="advantage__coin-body" d="M-10 0v6a10 4 0 0 0 20 0V0a10 4 0 0 1-20 0z" />
+                      <ellipse class="advantage__coin-face" cx="0" cy="0" rx="10" ry="4" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="subhead">Get started</h3>
               <p class="body">
-                Move between stocks, tokens, and yield from a single ticket. Adjust positions without leaving your flow.
+                A low minimum so you can learn the desk before you put on real size.
               </p>
             </article>
             <article>
-              <p class="eyebrow tabular">02</p>
-              <h3 class="subhead">See more of the market</h3>
+              <div class="advantage__stat">
+                <p class="advantage__figure tabular">$8M+</p>
+                <svg class="advantage__coins advantage__coins--lg" viewBox="0 0 46 44" aria-hidden="true">
+                  <g stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+                    <g transform="translate(28 10)">
+                      <path class="advantage__coin-body" d="M-10 0v6a10 4 0 0 0 20 0V0a10 4 0 0 1-20 0z" />
+                      <ellipse class="advantage__coin-face" cx="0" cy="0" rx="10" ry="4" />
+                    </g>
+                    <g transform="translate(18 16)">
+                      <path class="advantage__coin-body" d="M-10 0v6a10 4 0 0 0 20 0V0a10 4 0 0 1-20 0z" />
+                      <ellipse class="advantage__coin-face" cx="0" cy="0" rx="10" ry="4" />
+                    </g>
+                    <g transform="translate(30 22)">
+                      <path class="advantage__coin-body" d="M-10 0v6a10 4 0 0 0 20 0V0a10 4 0 0 1-20 0z" />
+                      <ellipse class="advantage__coin-face" cx="0" cy="0" rx="10" ry="4" />
+                    </g>
+                    <g transform="translate(16 28)">
+                      <path class="advantage__coin-body" d="M-10 0v6a10 4 0 0 0 20 0V0a10 4 0 0 1-20 0z" />
+                      <ellipse class="advantage__coin-face" cx="0" cy="0" rx="10" ry="4" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="subhead">Trade at scale</h3>
               <p class="body">
-                Live charts and the numbers that count, together on one screen. Easy to read. Built to help you decide.
-              </p>
-            </article>
-            <article>
-              <p class="eyebrow tabular">03</p>
-              <h3 class="subhead">Stay focused</h3>
-              <p class="body">
-                A clean workspace in a busy market. You see what you need to trade. Nothing else.
+                Capacity for larger orders, on the same ticket you already know.
               </p>
             </article>
           </div>
@@ -305,9 +336,9 @@
 
       <section class="cta" id="get-started">
         <div class="wrap cta__inner">
-          <h2 class="heading">Fast-track<br />your goals</h2>
+          <h2 class="heading">Open your<br />account</h2>
           <p class="lede">
-            Open an account. Trade on Solana with a platform that is both simple and seriously capable.
+            Trade on Solana with a platform that is both simple and seriously capable.
           </p>
           <a class="btn btn--paper btn--lg" href="https://acend-production.up.railway.app">
             Open an account <span class="arrow" aria-hidden="true">→</span>
@@ -359,6 +390,15 @@
         </a>
       </div>
     </footer>
+
+    <div class="beta-gate" id="beta-gate" hidden role="dialog" aria-modal="true" aria-labelledby="beta-gate-title">
+      <div class="beta-gate__backdrop" data-beta-close></div>
+      <div class="beta-gate__panel">
+        <h2 id="beta-gate-title" class="heading">Currently in beta</h2>
+        <p class="lede">We will be opening soon.</p>
+        <button type="button" class="btn btn--ink btn--lg" data-beta-close>Go back</button>
+      </div>
+    </div>
 
     <script src="./main.js"></script>
   </body>
